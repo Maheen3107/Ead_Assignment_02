@@ -1,0 +1,75 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Assignment_02
+build_property.RootNamespace = Assignment_02
+build_property.ProjectDir = D:\University\7th semester\Web\Assignment_02\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\University\7th semester\Web\Assignment_02
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/University/7th semester/Web/Assignment_02/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Components/RecipeCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZWNpcGVDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Components/RecipeSearch.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZWNpcGVTZWFyY2gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Pages/RecipeDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlRGV0YWlsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Pages/RecipeForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Pages/RecipeList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Shared/ListTemplate.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExpc3RUZW1wbGF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/7th semester/Web/Assignment_02/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-keaxcr0kk2
+
+[D:/University/7th semester/Web/Assignment_02/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-sj2wcb852w

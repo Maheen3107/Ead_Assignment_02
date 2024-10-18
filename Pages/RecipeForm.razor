@@ -1,0 +1,74 @@
+﻿@page "/recipeForm/{id:int?}"
+@using Assignment_02.Models
+@inject RecipeService RecipeService
+@inject NavigationManager NavigationManager
+
+<h3>@(id.HasValue && id.Value > 0 ? "Edit Recipe" : "Add New Recipe")</h3>
+
+<EditForm Model="@recipe" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Name:</label>
+        <InputText @bind-Value="recipe.Name" />
+    </div>
+    <div>
+        <label>Image URL:</label>
+        <InputText @bind-Value="recipe.ImageUrl" />
+    </div>
+    <div>
+        <label>Description:</label>
+        <InputTextArea @bind-Value="recipe.Description" />
+    </div>
+    <div>
+        <label>Ingredients (comma-separated):</label>
+        <InputText @bind-Value="ingredientsInput" />
+    </div>
+    <div>
+        <label>Instructions:</label>
+        <InputTextArea @bind-Value="recipe.Instructions" />
+    </div>
+    <div>
+        <label>Category:</label>
+        <InputTextArea @bind-Value="recipe.Category" />
+    </div>
+
+    <button type="submit">@((id.HasValue && id.Value > 0) ? "Update Recipe" : "Add Recipe")</button>
+</EditForm>
+
+@code {
+    [Parameter] public int? id { get; set; }  // Nullable for differentiating new and existing recipes
+
+    public Recipe recipe = new Recipe();
+    private string ingredientsInput;
+
+    protected override void OnInitialized()
+    {
+        if (id.HasValue && id.Value > 0) // Edit existing recipe
+        {
+            recipe = RecipeService.GetRecipeById(id.Value);
+            ingredientsInput = string.Join(", ", recipe.Ingredients); // Convert list to comma-separated string
+        }
+        else // Add new recipe
+        {
+            recipe = new Recipe(); // New Recipe object for adding
+        }
+    }
+
+    private void HandleValidSubmit()
+    {
+        recipe.Ingredients = ingredientsInput.Split(',').Select(i => i.Trim()).ToList();
+
+        if (!id.HasValue || id == 0) // Adding a new recipe
+        {
+            RecipeService.AddRecipe(recipe);
+        }
+        else // Editing an existing recipe
+        {
+            RecipeService.UpdateRecipe(recipe);
+        }
+
+        NavigationManager.NavigateTo("/recipes"); // Redirect to the list after submission
+    }
+}

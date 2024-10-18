@@ -1,0 +1,121 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\obj\\Debug\\net8.0\\compressed\\k4lxh1zdxj.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Assignment_02.styles.css",
+      "PackagePath": "staticwebassets\\Assignment_02.styles.css"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "PackagePath": "staticwebassets\\service-worker-assets.js"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\icon-512.png",
+      "PackagePath": "staticwebassets\\icon-512.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\Pancake.png",
+      "PackagePath": "staticwebassets\\images\\Pancake.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\Tacos.png",
+      "PackagePath": "staticwebassets\\images\\Tacos.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\beef.png",
+      "PackagePath": "staticwebassets\\images\\beef.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\chicki.png",
+      "PackagePath": "staticwebassets\\images\\chicki.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\chip.png",
+      "PackagePath": "staticwebassets\\images\\chip.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\coverimage.png",
+      "PackagePath": "staticwebassets\\images\\coverimage.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\omi.png",
+      "PackagePath": "staticwebassets\\images\\omi.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\pizza.png",
+      "PackagePath": "staticwebassets\\images\\pizza.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\salad.png",
+      "PackagePath": "staticwebassets\\images\\salad.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\spagi.png",
+      "PackagePath": "staticwebassets\\images\\spagi.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\images\\vege.png",
+      "PackagePath": "staticwebassets\\images\\vege.png"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\manifest.webmanifest",
+      "PackagePath": "staticwebassets\\manifest.webmanifest"
+    },
+    {
+      "Id": "D:\\University\\7th semester\\Web\\Assignment_02\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Assignment_02.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Assignment_02.props",
+      "PackagePath": "build\\Assignment_02.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Assignment_02.props",
+      "PackagePath": "buildMultiTargeting\\Assignment_02.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Assignment_02.props",
+      "PackagePath": "buildTransitive\\Assignment_02.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

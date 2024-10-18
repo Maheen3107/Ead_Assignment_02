@@ -1,0 +1,14 @@
+﻿@using Assignment_02.Models
+@inject RecipeService RecipeService
+@inject NavigationManager NavigationManager
+<link href="~/css/app.css" rel="stylesheet" />
+
+<h3>SearchComponent</h3>
+
+@code {
+
+    public List<Recipe> Search(string title)
+    {
+        return RecipeService.SearchRecipe(title);  // Ensure RecipeService.SearchRecipe() returns a List<Recipe>
+    }
+}

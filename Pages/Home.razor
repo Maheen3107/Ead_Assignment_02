@@ -1,0 +1,79 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<div class="page">
+    <div class="home-container">
+        <h1>Welcome to the Recipe Haven!</h1>
+        <p>Discover delicious recipes to satisfy every craving.</p>
+        <div class="button-container">
+            <button class="start-button" @onclick="NavigateToRecipes">Start Cooking!</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Ensuring full height and width for the page */
+    html, body {
+        height: 100%;
+        margin: 0; /* Remove default margin */
+    }
+
+    /* Page container to hold the background image */
+    .page {
+        position: relative; /* To allow positioning of child elements */
+        width: 100%; /* Full width */
+        height: 100vh; /* Full viewport height */
+        background-image: url("/images/coverimage.png"); /* Set background image */
+        background-size: cover; /* Ensure the image covers the entire area */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent image from repeating */
+    }
+
+    /* Container for text and button */
+    .home-container {
+        position: absolute; /* Positioning over the background image */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust centering */
+        text-align: center; /* Center text alignment */
+        color: white; /* Text color over the image */
+        z-index: 1; /* Ensure text appears above the image */
+    }
+
+    /* Ensure the font size is large and easily readable */
+    h1 {
+        font-size: 3rem; /* Font size for the header */
+        margin: 0; /* Remove default margin */
+        color: white; /* White color for header */
+    }
+
+    p {
+        font-size: 1.5rem; /* Font size for the paragraph */
+        margin: 10px 0; /* Margin for spacing between elements */
+        color: white; /* White color for paragraph text */
+    }
+
+    /* Button styling */
+    .start-button {
+        background-color: #ffcc00; /* Button background color */
+        color: black; /* Text color */
+        padding: 10px 20px; /* Button padding */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor */
+        font-size: 16px; /* Font size */
+        margin-top: 20px; /* Space above the button */
+    }
+
+        /* Button hover effect */
+        .start-button:hover {
+            background-color: #e6b800; /* Darker shade on hover */
+        }
+</style>
+
+@code {
+    private void NavigateToRecipes()
+    {
+        Navigation.NavigateTo("/recipes");
+    }
+}

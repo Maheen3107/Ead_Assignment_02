@@ -1,0 +1,198 @@
+﻿@page "/recipes"
+
+@using Assignment_02.Models
+@using Assignment_02.Services
+@using Assignment_02.Components
+@inject RecipeService RecipeService
+@inject NavigationManager NavigationManager
+<div class="Recipe-List">
+
+    <h3>Recipe List</h3>
+
+    <!-- View switch buttons -->
+    <div class="view-switch-buttons">
+        <button @onclick="@ListView" class="view-button">List View</button>
+        <button @onclick="@GridView" class="view-button">Grid View</button>
+    </div>
+
+    <!-- Search bar and category filter -->
+    <div class="search">
+        <input type="text" @bind="searchQuery" placeholder="Search for recipes..." class="search-bar" />
+        <select @bind="selectedCategory" class="category-filter">
+            <option value="">All Categories</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+        <button @onclick="SearchRecipes" class="search-button">Search</button>
+    </div>
+
+    <!-- Displaying recipes -->
+    @if (items != null && items.Any())
+    {
+        <!-- The RecipeSearch component -->
+        <RecipeSearch @ref="c1"></RecipeSearch>
+
+        <!-- The list or grid view of recipes -->
+        <ListTemplate Items="items" ContainerClass="@GetView()">
+            <ChildContent Context="recipe">
+                <RecipeCard recipe="recipe" Delete="@delete"></RecipeCard>
+            </ChildContent>
+        </ListTemplate>
+    }
+    else
+    {
+        <p>No recipes found.</p>
+    }
+
+    <!-- Add recipe button -->
+    <button @onclick="AddRecipe" class="add-recipe-button">Add Recipe</button>
+</div>
+
+<style>
+    body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .recipe-list {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+        color: white;
+        text-align: center;
+    }
+
+    .view-switch-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .view-button, .add-recipe-button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #e6a800;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .view-button:hover, .add-recipe-button:hover {
+            background-color: white;
+        }
+
+    .search {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .search-bar {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+        flex: 1;
+    }
+
+    .category-filter {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .search-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .search-button:hover {
+            background-color: #218838;
+        }
+
+    
+    }
+
+</style>
+
+@code {
+    private List<Recipe> items = new List<Recipe>();  // Initialize the list
+    private string searchQuery = string.Empty;  // Search query string
+    private string selectedCategory = string.Empty;  // Selected category for filtering
+    public RecipeSearch c1;  // Reference to the RecipeSearch component
+    private bool IsList = true;  // Default to list view
+
+    // On page load, fetch all recipes
+    protected override async Task OnInitializedAsync()
+    {
+        items = RecipeService.GetAllRecipes();  // Fetch recipes from the service
+    }
+
+    // Delete a recipe by ID
+    public async Task delete(int recipeId)
+    {
+        RecipeService.DeleteRecipe(recipeId);
+        items = items.Where(r => r.Id != recipeId).ToList();  // Update the list after deletion
+    }
+
+    // Navigate to Add Recipe form
+    public void AddRecipe()
+    {
+        NavigationManager.NavigateTo("/recipeForm");
+    }
+
+    // Switch to list view
+    public void ListView()
+    {
+        IsList = true;
+        StateHasChanged();  // Trigger UI update
+    }
+
+    // Switch to grid view
+    public void GridView()
+    {
+        IsList = false;
+        StateHasChanged();  // Trigger UI update
+    }
+
+    // Return appropriate CSS class based on view type
+    public string GetView()
+    {
+        return IsList ? "list-container" : "grid-container";
+    }
+
+    // Perform recipe search and category filtering
+    public async Task SearchRecipes()
+    {
+        // First, search for the recipes by query
+        if (c1 != null)
+        {
+            items = c1.Search(searchQuery);  // Filter by search query
+        }
+
+        // Filter by selected category
+        if (!string.IsNullOrEmpty(selectedCategory))
+        {
+            items = items.Where(r => r.Category == selectedCategory).ToList();
+        }
+
+        StateHasChanged();  // Refresh the UI
+    }
+}

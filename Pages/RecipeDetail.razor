@@ -1,0 +1,124 @@
+﻿@page "/recipeDetails/{id:int}"
+@using Assignment_02.Models
+@using Assignment_02.Services
+@inject RecipeService RecipeService
+@inject NavigationManager NavigationManager
+
+<h3 class="recipe-title">Recipe Details</h3>
+<div class="recipe-form">
+
+    @if (recipe != null)
+    {
+        <h4 class="recipe-name">@recipe.Name</h4>
+        <img src="@recipe.ImageUrl" alt="@recipe.Name" class="recipe-image" />
+        <p class="recipe-description"><strong>Description:</strong> @recipe.Description</p>
+        <p>
+            <strong>Ingredients:</strong>
+            <ul class="ingredient-list">
+                @if (recipe.Ingredients != null && recipe.Ingredients.Any())
+                {
+                    foreach (var ingredient in recipe.Ingredients)
+                    {
+                        <li>@ingredient</li>
+                    }
+                }
+                else
+                {
+                    <li>No ingredients available.</li>
+                }
+            </ul>
+        </p>
+        <p class="recipe-instructions"><strong>Instructions:</strong> @recipe.Instructions</p>
+
+        <button @onclick="EditForm" class="edit-button">Edit Recipe</button>
+        <button @onclick="Back" class="edit-button">Back</button>
+    }
+    else
+    {
+        <p>No details found.</p>
+    }
+</div>
+
+<style>
+    body {
+        background-color: black; /* Light background color for better contrast */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .recipe-form {
+        max-width: 600px; /* Limit the width for better readability */
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #ffffff; /* White background for the recipe details */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    }
+
+    .recipe-title {
+        text-align: center;
+        color: #333; /* Darker color for title */
+    }
+
+    .recipe-name {
+        text-align: center;
+        color: #e6a800; /* Primary color for recipe name */
+    }
+
+    .recipe-image {
+        width: 100%; /* Responsive image */
+        height: auto;
+        border-radius: 8px; /* Rounded corners */
+        margin: 20px 0; /* Margin for spacing */
+    }
+
+    .recipe-description,
+    .recipe-instructions {
+        color: #555; /* Slightly lighter color for descriptions */
+    }
+
+    .ingredient-list {
+        list-style-type: disc; /* Default list style */
+        margin-left: 20px; /* Indent for better readability */
+        padding: 0;
+        color: #444; /* Color for ingredients */
+    }
+
+        .ingredient-list li {
+            margin-bottom: 5px; /* Space between ingredient items */
+        }
+
+    .edit-button {
+        display: block;
+        margin: 20px auto; /* Centered button */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #28a745; /* Success color */
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .edit-button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+</style>
+
+@code {
+    public Recipe recipe;
+    [Parameter]
+    public int id { get; set; }
+
+    public void EditForm() => NavigationManager.NavigateTo($"/recipeForm/{recipe.Id}");
+
+    public void Back() => NavigationManager.NavigateTo($"/recipes/");
+
+    protected override void OnInitialized()
+    {
+        recipe = RecipeService.GetRecipeById(id); // Method to get recipe by ID
+    }
+}
